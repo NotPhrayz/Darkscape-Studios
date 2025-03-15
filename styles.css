@@ -95,6 +95,141 @@ nav a:hover {
   transform: scale(1.05);
 }
 
+/* Light Theme Overrides */
+body.light-theme {
+  background-color: #F5F5F5;
+  color: #000000;
+}
+
+body.light-theme header {
+  background-color: #DDDDDD;
+}
+
+body.light-theme header h1 {
+  color: #000000;
+}
+
+body.light-theme nav a {
+  color: #000000;
+}
+
+body.light-theme nav a.active {
+  color: #00FF00;
+}
+
+body.light-theme nav a:hover {
+  color: #00FF00;
+}
+
+body.light-theme .hero {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+body.light-theme .hero-content h2 {
+  color: #000000;
+}
+
+body.light-theme .hero-content h3 {
+  color: #00FF00;
+}
+
+body.light-theme .cta-button {
+  background-color: #00FF00;
+  color: #000000;
+}
+
+body.light-theme .cta-button:hover {
+  background-color: #00CC00;
+}
+
+body.light-theme .about {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+body.light-theme .about h2 {
+  color: #00FF00;
+}
+
+body.light-theme .about-box {
+  background-color: #F5F5F5;
+  border: 2px solid #000000;
+}
+
+body.light-theme .about-box:hover {
+  box-shadow: 0 0 15px #000000;
+}
+
+body.light-theme .news {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+body.light-theme .news h2 {
+  color: #00FF00;
+}
+
+body.light-theme .news-item {
+  background-color: #F5F5F5;
+  color: #000000;
+}
+
+body.light-theme .news-item h3 {
+  color: #00FF00;
+}
+
+body.light-theme .news-item .date {
+  color: #666;
+}
+
+body.light-theme .contact-form {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+body.light-theme .contact-form h2 {
+  color: #00FF00;
+}
+
+body.light-theme .contact-form input,
+body.light-theme .contact-form textarea {
+  background-color: #F5F5F5;
+  border: 1px solid #CCCCCC;
+  color: #000000;
+}
+
+body.light-theme .contact-form button {
+  background-color: #00FF00;
+  color: #000000;
+}
+
+body.light-theme .contact-form button:hover {
+  background-color: #00CC00;
+}
+
+body.light-theme footer {
+  background-color: #DDDDDD;
+  color: #000000;
+}
+
+body.light-theme .social-links a {
+  color: #00FF00;
+}
+
+body.light-theme .social-links a:hover {
+  color: #00CC00;
+}
+
+body.light-theme .theme-toggle #theme-button {
+  background-color: #333;
+  color: #FFFFFF;
+}
+
+body.light-theme #mode-text {
+  color: #333;
+}
+
 /* Contact Form Styles */
 .contact-form {
   max-width: 600px;
