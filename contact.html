@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Darkscape Studios</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="ico/dsicon.png">
+</head>
+<body>
+  <header>
+    <h1>Darkscape Studios</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="news.html">News</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+<div class="theme-toggle">
+  <button id="theme-button">Toggle Theme</button>
+  <p id="mode-text">Dark Mode</p>
+</div>
+  </header>
+
+  <main>
+    <section class="contact-form">
+      <h2>Contact Us</h2>
+      <p>Have a question or want to collaborate? Send us a message!</p>
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Darkscape Studios. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://x.com/DsStudiosRBLX">Twitter</a>
+      <a href="https://discord.gg/Mm4euw8Yn4">Discord</a>
+      <a href="#">Not Available</a>
+      </div>
+  </footer>
+
+  <script>
+    // Discord Webhook URL (replace with your actual webhook URL)
+    const webhookURL = 'https://discord.com/api/webhooks/1350600402629820506/fLUib5r011Z5v3bqNf-VZ5oGjk7U9gdopUuy8ek5OpQ8h_3V3D542lh_j4HoqqLxEDJB';
+
+    // Handle form submission
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault(); // Prevent the form from submitting normally
+
+      // Get form data
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      // Create the embed object
+      const embed = {
+        title: 'New Contact Form Submission',
+        color: 0x00ff00, // Green color
+        fields: [
+          {
+            name: 'Name',
+            value: name,
+            inline: true,
+          },
+          {
+            name: 'Email',
+            value: email,
+            inline: true,
+          },
+          {
+            name: 'Message',
+            value: message,
+          },
+        ],
+        timestamp: new Date().toISOString(),
+      };
+
+      // Send the embed to Discord
+      fetch(webhookURL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          embeds: [embed],
+        }),
+      })
+        .then((response) => {
+          if (response.ok) {
+            alert('Message sent successfully!');
+            document.getElementById('contactForm').reset(); // Clear the form
+          } else {
+            alert('Failed to send message. Please try again.');
+          }
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          alert('An error occurred. Please try again.');
+        });
+    });
+  </script>
+
+<script src="js/script.js"></script>
+</body>
+</html>
