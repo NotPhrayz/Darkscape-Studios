@@ -47,6 +47,11 @@ nav a:hover {
   background-color: #2A2A2A;
   margin: 20px;
   border-radius: 10px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero:hover {
+  box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
 }
 
 .hero-content {
@@ -56,6 +61,7 @@ nav a:hover {
 .hero-content h2 {
   font-size: 2.5rem;
   margin-bottom: 10px;
+  color: #FFFFFF;
 }
 
 .hero-content h3 {
@@ -67,6 +73,7 @@ nav a:hover {
 .hero-content p {
   font-size: 1.1rem;
   margin-bottom: 20px;
+  color: #FFFFFF;
 }
 
 .cta-button {
@@ -76,17 +83,18 @@ nav a:hover {
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .cta-button:hover {
   background-color: #00CC00;
+  transform: translateY(-2px);
 }
 
 .hero-image img {
-  max-width: 700px; /* Adjust this value to make the image smaller */
-  width: 100%; /* Ensures the image is responsive */
-  height: auto; /* Maintains aspect ratio */
+  max-width: 700px;
+  width: 100%;
+  height: auto;
   border-radius: 10px;
   transition: transform 0.3s ease;
 }
@@ -95,32 +103,106 @@ nav a:hover {
   transform: scale(1.05);
 }
 
-/* Light Theme Overrides */
-body.light-theme {
+/* About Section Styles */
+.about {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #00FF00;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-text {
+  max-width: 60%; /* Adjust width as needed */
+  text-align: left;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.about-box {
+  background-color: #333;
+  border-radius: 10px;
+  border: 2px solid #00FF00; /* Neon green border */
+  display: inline-flex; /* Make the box fit the image */
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Ensures the image stays within the box */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-box img {
+  max-width: 100%; /* Ensure the image doesn't exceed the box */
+  max-height: 300px; /* Optional: Set a max height to prevent oversized images */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Match the box's border radius */
+}
+
+.about-box:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0 0 15px #00FF00; /* Neon green glow effect */
+}
+
+/* Light Theme Overrides for About Section */
+body.light-theme .about-box {
   background-color: #F5F5F5;
-  color: #000000;
+  border: 2px solid #000000; /* Black border for light mode */
 }
 
-body.light-theme header {
-  background-color: #DDDDDD;
+body.light-theme .about-box:hover {
+  box-shadow: 0 0 15px #000000; /* Black glow effect for light mode */
 }
 
-body.light-theme header h1 {
-  color: #000000;
+/* Hero Box Styles */
+.hero-box {
+  width: 45%; /* Adjust width as needed */
+  height: 300px; /* Adjust height as needed */
+  background-color: #333;
+  border-radius: 10px;
+  border: 2px solid #00FF00; /* Neon green border */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Ensures the image stays within the box */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-body.light-theme nav a {
-  color: #000000;
+.hero-box img {
+  width: 100%; /* Make the image fill the box */
+  height: 100%; /* Make the image fill the box */
+  object-fit: cover; /* Ensures the image covers the box without distortion */
+  border-radius: 10px; /* Match the box's border radius */
 }
 
-body.light-theme nav a.active {
-  color: #00FF00;
+.hero-box:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0 0 15px #00FF00; /* Neon green glow effect */
 }
 
-body.light-theme nav a:hover {
-  color: #00FF00;
+/* Light Theme Overrides for Hero Box */
+body.light-theme .hero-box {
+  background-color: #F5F5F5;
+  border: 2px solid #000000; /* Black border for light mode */
 }
 
+body.light-theme .hero-box:hover {
+  box-shadow: 0 0 15px #000000; /* Black glow effect for light mode */
+}
+
+/* Light Theme Overrides for Hero Section */
 body.light-theme .hero {
   background-color: #FFFFFF;
   color: #000000;
@@ -134,6 +216,10 @@ body.light-theme .hero-content h3 {
   color: #00FF00;
 }
 
+body.light-theme .hero-content p {
+  color: #000000;
+}
+
 body.light-theme .cta-button {
   background-color: #00FF00;
   color: #000000;
@@ -141,93 +227,6 @@ body.light-theme .cta-button {
 
 body.light-theme .cta-button:hover {
   background-color: #00CC00;
-}
-
-body.light-theme .about {
-  background-color: #FFFFFF;
-  color: #000000;
-}
-
-body.light-theme .about h2 {
-  color: #00FF00;
-}
-
-body.light-theme .about-box {
-  background-color: #F5F5F5;
-  border: 2px solid #000000;
-}
-
-body.light-theme .about-box:hover {
-  box-shadow: 0 0 15px #000000;
-}
-
-body.light-theme .news {
-  background-color: #FFFFFF;
-  color: #000000;
-}
-
-body.light-theme .news h2 {
-  color: #00FF00;
-}
-
-body.light-theme .news-item {
-  background-color: #F5F5F5;
-  color: #000000;
-}
-
-body.light-theme .news-item h3 {
-  color: #00FF00;
-}
-
-body.light-theme .news-item .date {
-  color: #666;
-}
-
-body.light-theme .contact-form {
-  background-color: #FFFFFF;
-  color: #000000;
-}
-
-body.light-theme .contact-form h2 {
-  color: #00FF00;
-}
-
-body.light-theme .contact-form input,
-body.light-theme .contact-form textarea {
-  background-color: #F5F5F5;
-  border: 1px solid #CCCCCC;
-  color: #000000;
-}
-
-body.light-theme .contact-form button {
-  background-color: #00FF00;
-  color: #000000;
-}
-
-body.light-theme .contact-form button:hover {
-  background-color: #00CC00;
-}
-
-body.light-theme footer {
-  background-color: #DDDDDD;
-  color: #000000;
-}
-
-body.light-theme .social-links a {
-  color: #00FF00;
-}
-
-body.light-theme .social-links a:hover {
-  color: #00CC00;
-}
-
-body.light-theme .theme-toggle #theme-button {
-  background-color: #333;
-  color: #FFFFFF;
-}
-
-body.light-theme #mode-text {
-  color: #333;
 }
 
 /* Contact Form Styles */
@@ -238,6 +237,13 @@ body.light-theme #mode-text {
   background-color: #2A2A2A;
   border-radius: 10px;
   text-align: center;
+  border: 2px solid #00FF00; /* Neon green border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
 }
 
 .contact-form h2 {
@@ -249,6 +255,7 @@ body.light-theme #mode-text {
 .contact-form p {
   font-size: 1.1rem;
   margin-bottom: 20px;
+  color: #FFFFFF;
 }
 
 .form-group {
@@ -260,6 +267,7 @@ body.light-theme #mode-text {
   display: block;
   font-size: 1.1rem;
   margin-bottom: 5px;
+  color: #FFFFFF;
 }
 
 .form-group input,
@@ -271,6 +279,14 @@ body.light-theme #mode-text {
   background-color: #333;
   color: #FFFFFF;
   font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #00FF00;
+  box-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
+  outline: none;
 }
 
 .form-group textarea {
@@ -286,11 +302,135 @@ body.light-theme #mode-text {
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .contact-form button:hover {
   background-color: #00CC00;
+  transform: translateY(-2px);
+}
+
+/* Light Theme Overrides for Contact Form */
+body.light-theme .contact-form {
+  background-color: #FFFFFF;
+  border: 2px solid #000000;
+}
+
+body.light-theme .contact-form:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.light-theme .contact-form h2 {
+  color: #000000;
+}
+
+body.light-theme .contact-form p {
+  color: #000000;
+}
+
+body.light-theme .form-group label {
+  color: #000000;
+}
+
+body.light-theme .form-group input,
+body.light-theme .form-group textarea {
+  background-color: #F5F5F5;
+  border: 1px solid #CCCCCC;
+  color: #000000;
+}
+
+body.light-theme .form-group input:focus,
+body.light-theme .form-group textarea:focus {
+  border-color: #000000;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+body.light-theme .contact-form button {
+  background-color: #00FF00;
+  color: #000000;
+}
+
+body.light-theme .contact-form button:hover {
+  background-color: #00CC00;
+}
+
+/* Admin Panel Styles */
+#admin-panel {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #2A2A2A;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  color: #FFFFFF;
+}
+
+#admin-panel h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #00FF00;
+  text-align: center;
+}
+
+#admin-panel p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+#admin-panel ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#admin-panel ul li {
+  font-size: 1rem;
+  color: #FFFFFF;
+  margin-bottom: 5px;
+}
+
+/* Theme Button Styles */
+#theme-button {
+  background-color: #00FF00;
+  color: #000000;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin: 20px auto;
+  display: block;
+}
+
+#theme-button:hover {
+  background-color: #00CC00;
+}
+
+#mode-text {
+  font-size: 1.1rem;
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+}
+
+/* Light Theme Styles for Admin Panel */
+body.light-theme #admin-panel {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+body.light-theme #admin-panel p,
+body.light-theme #admin-panel ul li {
+  color: #000000;
+}
+
+body.light-theme #theme-button {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+body.light-theme #theme-button:hover {
+  background-color: #333333;
 }
 
 /* About Section */
@@ -392,14 +532,16 @@ body.light-theme #mode-text {
 
 .news-item {
   margin-bottom: 30px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #444;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 10px;
+  border: 2px solid #00FF00;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.news-item:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
+.news-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
 }
 
 .news-item h3 {
@@ -419,90 +561,91 @@ body.light-theme #mode-text {
   line-height: 1.6;
 }
 
-/* About Section */
-.about {
-  padding: 50px 20px;
-  text-align: center;
+/* Light Theme Overrides for News Section */
+body.light-theme .news {
+  background-color: #FFFFFF;
+  color: #000000;
 }
 
-.about h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #00FF00;
+body.light-theme .news-item {
+  background-color: #F5F5F5;
+  border: 2px solid #000000;
 }
 
-.about-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
+body.light-theme .news-item h3 {
+  color: #000000;
+}
+
+body.light-theme .news-item .date {
+  color: #666;
+}
+
+/* Leaderboard Table */
+#leaderboard-table {
+  width: 100%;
+  max-width: 600px;
   margin: 0 auto;
-}
-
-.about-text {
-  max-width: 60%; /* Adjust width as needed */
-  text-align: left;
-}
-
-.about-text p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-.about-box {
-  width: 35%; /* Adjust width as needed */
-  height: 250px; /* Adjust height as needed */
+  border-collapse: collapse;
   background-color: #333;
   border-radius: 10px;
-  border: 2px solid #00FF00; /* Neon green border */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden; /* Ensures the image stays within the box */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.about-box img {
-  width: 100%; /* Make the image fill the box */
-  height: 100%; /* Make the image fill the box */
-  object-fit: cover; /* Ensures the image covers the box without distortion */
-  border-radius: 10px; /* Match the box's border radius */
+#leaderboard-table th,
+#leaderboard-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #00FF00;
 }
 
-.about-box:hover {
-  transform: scale(1.05); /* Slightly enlarge on hover */
-  box-shadow: 0 0 15px #00FF00; /* Neon green glow effect */
+#leaderboard-table th {
+  background-color: #444;
+  color: #00FF00;
+  font-size: 1.1rem;
 }
 
-/* Light Theme Styles for About Section */
-body.light-theme .about-box {
+#leaderboard-table td {
+  color: #FFFFFF;
+}
+
+#leaderboard-table tbody tr:hover {
+  background-color: #3A3A3A;
+  transition: background-color 0.3s ease;
+}
+
+/* Light Theme Styles */
+body.light-theme {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+body.light-theme #theme-button {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+body.light-theme #theme-button:hover {
+  background-color: #333333;
+}
+
+body.light-theme #leaderboard-table {
   background-color: #F5F5F5;
-  border: 2px solid #000000; /* Black border for light mode */
+  border: 1px solid #000000;
 }
 
-body.light-theme .about-box:hover {
-  box-shadow: 0 0 15px #000000; /* Black glow effect for light mode */
+body.light-theme #leaderboard-table th {
+  background-color: #DDD;
+  color: #000000;
 }
 
-/* Light Theme Styles for About Section */
-body.light-theme .about-box {
-  background-color: #F5F5F5;
-  border: 2px solid #000000; /* Black border for light mode */
+body.light-theme #leaderboard-table td {
+  color: #000000;
 }
 
-body.light-theme .about-box:hover {
-  box-shadow: 0 0 15px #000000; /* Black glow effect for light mode */
+body.light-theme #leaderboard-table tbody tr:hover {
+  background-color: #EEE;
 }
-/* Light Theme Styles for About Section */
-body.light-theme .about-box {
-  background-color: #F5F5F5;
-  border: 2px solid #000000; /* Black border for light mode */
-}
-
-body.light-theme .about-box:hover {
-  box-shadow: 0 0 15px #000000; /* Black glow effect for light mode */
-}
-
 
 /* Footer */
 footer {
@@ -530,6 +673,73 @@ footer p {
 
 .social-links a:hover {
   color: #00CC00;
+}
+
+/* Game Updates Page Styles */
+.patch-notes, .upcoming-features {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #2A2A2A;
+  border-radius: 10px;
+}
+
+.update-card, .feature-card {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 10px;
+  border: 2px solid #00FF00;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.update-card:hover, .feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
+}
+
+.update-card h3, .feature-card h3 {
+  font-size: 1.5rem;
+  color: #00FF00;
+  margin-bottom: 10px;
+}
+
+.update-card .date, .feature-card .date {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.update-card ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.update-card ul li {
+  margin-bottom: 10px;
+}
+
+/* Light Theme Overrides */
+body.light-theme .patch-notes,
+body.light-theme .upcoming-features {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+body.light-theme .update-card,
+body.light-theme .feature-card {
+  background-color: #F5F5F5;
+  border: 2px solid #000000;
+}
+
+body.light-theme .update-card h3,
+body.light-theme .feature-card h3 {
+  color: #000000;
+}
+
+body.light-theme .update-card .date,
+body.light-theme .feature-card .date {
+  color: #666;
 }
 
 /* New Styles for Theme Toggle */
