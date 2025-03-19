@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: darkscape-studios
+    env: static
+    buildCommand: npm install && npm run build # Adjust this if you're not using a build step
+    staticPublishPath: ./ # Path to your static files (e.g., index.html)
+    routes:
+      - type: rewrite
+        source: /home
+        destination: /index.html
+      - type: rewrite
+        source: /
+        destination: /index.html
+      - type: rewrite
+        source: /updates
+        destination: /games.html
+      - type: rewrite
+        source: /news
+        destination: /news.html
+      - type: rewrite
+        source: /contact
+        destination: /contact.html
